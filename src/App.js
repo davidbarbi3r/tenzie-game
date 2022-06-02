@@ -12,11 +12,9 @@ function App() {
   const [count, setCount] = useState(0)
   const [bestCount, setBestCount] = useState(JSON.parse(localStorage.getItem("Best-score")))
 
-  console.log(bestCount)
-
   function bestScore (){
     let scoreBest
-    if (tenzie && (count < JSON.parse(localStorage.getItem("Best-score") || JSON.parse === undefined))) {
+    if ((bestCount === null || count < JSON.parse(localStorage.getItem("Best-score"))) && tenzie){
       localStorage.setItem("Best-score", JSON.stringify(count))
       scoreBest = JSON.parse(localStorage.getItem("Best-score"))
       setBestCount(scoreBest)
@@ -61,7 +59,6 @@ function App() {
               {...die, isHeld: !die.isHeld} : 
               die
     }))
-    console.log(id)
   }
 
   useEffect(function (){
