@@ -61,10 +61,6 @@ function App() {
     }))
   }
 
-  /*function resetBestScore (){
-    localStorage.clear()
-  }*/
-
   useEffect(function (){
     const allHeld = allDice.every(die => die.isHeld)
     const firstValue = allDice[0].value
