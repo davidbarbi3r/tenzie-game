@@ -61,6 +61,10 @@ function App() {
     }))
   }
 
+  /*function resetBestScore (){
+    localStorage.clear()
+  }*/
+
   useEffect(function (){
     const allHeld = allDice.every(die => die.isHeld)
     const firstValue = allDice[0].value
@@ -69,6 +73,11 @@ function App() {
   }, [allDice])
  
  
+  function resetBestScore(){
+    localStorage.clear()
+    alert("refresh page")
+  }
+
   console.log(allDice)
   
   const diceElements = allDice.map((die) => 
@@ -93,6 +102,7 @@ function App() {
               {tenzie && <Confetti/>}
             </div>
             <button className='roll-btn' onClick= {rerollDice}>{tenzie ? "New Game" : "Roll"}</button>
+            <button className='reset-best-btn' onClick={resetBestScore}>Reset Best Score</button>
           </div>
         </div>
       </div>
